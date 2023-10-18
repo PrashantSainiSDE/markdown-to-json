@@ -1,5 +1,5 @@
 const fs = require("fs");
-const parse = require("html-dom-parser");
+// const parse = require("html-dom-parser");
 
 const mdFile = "dummy.md";
 
@@ -23,24 +23,32 @@ try {
   const tableVal = /\|(.+)\|((\r?\n)(\s*\|.+)+)*/g;
 
   // Check if table exist in file
-  const tables = mdData.match(tableVal);
+  let tables = mdData.match(tableVal);
 
   if (!tables) {
     console.log("No table found");
     process.exit(1);
   }
 
+  const requiredColumns = ["task_name", "task_description", "qty", "price"];
   const jsonResult = [];
+  const newTable = [];
+
+  // last point 88888888888888888888888888888888888888888
+tables.forEach(value => {
+ let array = value.split("|")
+  
+ console.log(array);
+}
+  )
 
   // slugify data
-  const headers = tables[0]
+  const headers = tables[1]
     .split("|")
     .map((value) => {
-      return slugify(value.trim());
+        return slugify(value.trim());
     })
     .filter(Boolean);
-
-  const requiredColumns = ["task_name", "task_description", "qty", "price"];
 
   // Check if fields present in data
   const isPresent = requiredColumns.every((str) => headers.includes(str));
@@ -114,6 +122,7 @@ function slugify(text) {
 
 // validate QTY method
 function validateQTY(QTY) {
+
   if (
     Number.isInteger(+QTY) &&
     parseInt(QTY) > 0 &&

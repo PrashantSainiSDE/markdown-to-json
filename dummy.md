@@ -8,10 +8,10 @@ Do ea nulla esse elit cillum sint exercitation tempor pariatur veniam. Proident 
 
 Sunt aliquip sit eiusmod excepteur. Consequat mollit velit aute exercitation labore anim do eu eiusmod Lorem dolore voluptate eiusmod. Aliquip pariatur do magna mollit qui. Sit ipsum sit pariatur et nulla.
 
--   Eiusmod veniam aliquip cupidatat dolore aute dolor.
--   Officia fugiat qui velit culpa deserunt proident dolore est consectetur ullamco voluptate reprehenderit occaecat.
--   Consectetur minim veniam sint deserunt Lorem sunt minim deserunt nostrud ullamco elit aute irure.
--   Id tempor labore consectetur mollit deserunt est nisi excepteur.
+- Eiusmod veniam aliquip cupidatat dolore aute dolor.
+- Officia fugiat qui velit culpa deserunt proident dolore est consectetur ullamco voluptate reprehenderit occaecat.
+- Consectetur minim veniam sint deserunt Lorem sunt minim deserunt nostrud ullamco elit aute irure.
+- Id tempor labore consectetur mollit deserunt est nisi excepteur.
 
 > Duis ad proident occaecat minim excepteur laboris duis culpa. Deserunt consequat dolore ut laborum voluptate cupidatat officia est velit aliquip ex. Ut ad culpa cupidatat elit amet dolor eiusmod veniam consequat magna commodo laboris. Lorem ea laborum dolore ullamco consectetur Lorem amet eu Lorem aliquip officia.
 
@@ -31,12 +31,6 @@ Aliqua nulla ipsum aliquip ex magna id eu enim ex reprehenderit ex. Excepteur el
 npm run install
 ```
 
----
-
-> |---|---|---|---|
-
-| Task Name | Task Description | QTY | Price |
-| --------- | ---------------- | --- | ----- |
 
 | Task Name | Task Description       | QTY | Price |
 | --------- | ---------------------- | --- | ----- |
