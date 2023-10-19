@@ -1,5 +1,4 @@
 const fs = require("fs");
-// const parse = require("html-dom-parser");
 
 const mdFile = "dummy.md";
 
@@ -31,35 +30,30 @@ try {
   }
 
   const requiredColumns = ["task_name", "task_description", "qty", "price"];
-  const jsonResult = [];
-  const newTable = [];
-
-  // last point 88888888888888888888888888888888888888888
-tables.forEach(value => {
- let array = value.split("|")
+  const processTable = [];
+  headers = [];
   
- console.log(array);
-}
-  )
-
-  // slugify data
-  const headers = tables[1]
-    .split("|")
-    .map((value) => {
-        return slugify(value.trim());
-    })
+  tables.forEach((value) => {
+    const array = value.split("|");
+    // slugify data
+    const slugifiedArray = array
+    .map((value) => slugify(value.trim()))
     .filter(Boolean);
+    
+    //check if columns present in table
+    const isPresent = requiredColumns.every((str) =>
+    slugifiedArray.includes(str)
+    );
+    if (isPresent) {
+      processTable.push(value);
+      headers = slugifiedArray;
+    }
+  });
+  
+  const jsonResult = [];
 
-  // Check if fields present in data
-  const isPresent = requiredColumns.every((str) => headers.includes(str));
-
-  if (!isPresent) {
-    console.log("Invalid column names");
-    process.exit(1);
-  }
-
-  if (tables) {
-    tables.forEach((table) => {
+  if (processTable) {
+    processTable.forEach((table) => {
       const lines = table.trim().split("\n");
       const tableData = [];
 
@@ -105,7 +99,6 @@ tables.forEach(value => {
 
   // Write in a file
   // fs.writeFileSync("table.json",jsonData)
-
 } catch (error) {
   // console error
   console.log(error);
@@ -122,7 +115,6 @@ function slugify(text) {
 
 // validate QTY method
 function validateQTY(QTY) {
-
   if (
     Number.isInteger(+QTY) &&
     parseInt(QTY) > 0 &&
